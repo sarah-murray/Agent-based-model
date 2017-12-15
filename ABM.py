@@ -1,4 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 """
+Created on Mon Oct 9 12:32:26 2017
+
+@author: sarahjmurray
+
 Create agents in space. Move agents and interact with environment.
 
 Import .csv environmental data and create agents at locations imported 
@@ -13,7 +19,6 @@ Args:
     neighbourhood (int, float) -- minimum distance between agents before
         they share data.
     total_fill (int, float) -- maximum data storage of each agent.
-    carry_on (bool) -- when true, programme continues
 
 Returns:
     dataout.csv -- The edited environmental data.
@@ -37,7 +42,7 @@ import bs4 #webscraping
 num_of_agents = 10 #control number of agents created
 num_of_iterations = 10 #control the number of iterations
 neighbourhood = 20 #control how close agents have to be to share resources
-total_fill = 1000 #maximum data store
+total_fill = 10000 #maximum data store
 
 
 def getTimeMS():
@@ -159,7 +164,7 @@ def gen_function(b = [0]):
     """
     a = 0
     global carry_on
-    while (a < total_fill) & (carry_on) :
+    while (a < num_of_iterations) & (carry_on) :
         yield a #return control and waits next call.
         a = a + 1
 
